@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { register } from './serviceWorkerRegistration'; // Importar la función de registro
+import { register } from './serviceWorker'; // Asegúrate de que el archivo esté correctamente importado
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,4 +18,5 @@ root.render(
 reportWebVitals();
 
 // Register the Service Worker
+
 register();
