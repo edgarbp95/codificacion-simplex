@@ -44,6 +44,13 @@ function App() {
     setInputValue(newValue);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      event.target.blur();
+    }
+  };
+
   // Actualiza el estado de los checkboxes basado en el valor del input
   useEffect(() => {
     const newCheckboxes = checkboxValues.map(value => (inputValue & value) === value);
@@ -64,7 +71,7 @@ function App() {
     </div>
     <div className='container-body'>
       <div className='container-body-inputs'>
-        <input type="number" value={inputValue} onChange={handleInputChange} onFocus={handleInputFocus} min={0} max={255}/>
+        <input type="number" value={inputValue} onChange={handleInputChange} onFocus={handleInputFocus} onKeyDown={handleKeyDown} min={0} max={255}/>
       </div>
       <div className='container-body-switches'>
         {
