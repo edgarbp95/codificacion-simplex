@@ -16,16 +16,21 @@ function App() {
   },[])
 
   const handleInputChange = (event) => {
-    // const newValue = Math.min(Math.max(Number(event.target.value), 0), 255);
-    // setInputValue(newValue);
-
     const { value } = event.target;
     const numericValue = Number(value);
-    if (isNaN(numericValue)) {
-      return;
+
+    if (value === '') {
+      setInputValue(''); 
+    } else if (!isNaN(numericValue)) {
+      const newValue = Math.min(Math.max(numericValue, 0), 255);
+      setInputValue(newValue);
     }
-    const newValue = Math.min(Math.max(numericValue, 0), 255);
-    setInputValue(newValue);
+  };
+
+  const handleInputFocus = () => {
+    if (inputValue === 0) {
+      setInputValue('');
+    }
   };
 
   // Maneja el cambio en los checkboxes
@@ -59,8 +64,7 @@ function App() {
     </div>
     <div className='container-body'>
       <div className='container-body-inputs'>
-        {/* <p>{inputValue}</p> */}
-        <input type="text" value={inputValue} onChange={handleInputChange} min={0} max={255}/>
+        <input type="number" value={inputValue} onChange={handleInputChange} onFocus={handleInputFocus} min={0} max={255}/>
       </div>
       <div className='container-body-switches'>
         {
