@@ -16,7 +16,15 @@ function App() {
   },[])
 
   const handleInputChange = (event) => {
-    const newValue = Math.min(Math.max(Number(event.target.value), 0), 255);
+    // const newValue = Math.min(Math.max(Number(event.target.value), 0), 255);
+    // setInputValue(newValue);
+
+    const { value } = event.target;
+    const numericValue = Number(value);
+    if (isNaN(numericValue)) {
+      return;
+    }
+    const newValue = Math.min(Math.max(numericValue, 0), 255);
     setInputValue(newValue);
   };
 
