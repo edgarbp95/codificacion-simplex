@@ -1,0 +1,222 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  text-align: center;
+  --red: #ec3c42;
+}
+
+*{
+  color: #FFFFFFDE;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* From Uiverse.io by Galahhad */ 
+.checkbox {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 4px solid transparent;
+  transition: .3s;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-20px);
+  border-radius: 20px;
+  transition: .3s;
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(20px);
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #236b23;
+}
+
+.checkbox:active ~ .slider::before {
+  transform: translate(0);
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  // padding: 10px 0 30px;
+  width: 100%;
+  height: 100%;
+  --color: rgba(114, 114, 114, 0.1);
+  background-color: #191a1a;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
+}
+
+.container{
+  padding: 1.2rem 0 2rem;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 10px ;
+  border: 2px solid #dde0e02a;
+  background-color: #191a1a;
+
+  &-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto 15px;
+    gap: 5px;
+
+    .logo{
+      width: 50px;
+      height: 50px;
+    }
+    h1{
+      font-size: 26px;
+      line-height:30px;
+    }
+  }
+
+  &-body{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-inputs{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      
+      input{
+        height: 30px;
+        text-align: center;
+        font-size: 18px;
+        width: 190px;
+        background-color: #3b3b3b;
+        border: 1px solid rgba(220, 220, 220, 0.233);
+        border-radius: 4px;
+      }
+
+      p{
+        font-size: 20px;
+      }
+    }
+
+    &-switches{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      &-switch{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        
+
+        h3{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.loader{
+  width: 100%;
+  height: 100vh;
+  background-color: #191a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+  
+  .logo-loader{
+    width: 130px;
+    height: 130px;
+    animation: aparecer 4s forwards;
+    filter: drop-shadow(0 0 20px #ec3c424f);
+  }
+
+  .by{
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+
+    span{
+      color: #26a026;
+      padding-left: 5px;
+    }
+
+  }
+}
+
+
+@keyframes aparecer {
+  0%{
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+}
