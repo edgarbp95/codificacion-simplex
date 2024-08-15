@@ -54,7 +54,7 @@ function App() {
     <div className='main-container'>
     <div className='container'>
     <div className='container-header'>
-      <img className='logo' src={logoCod} alt="" />
+      <img className='logo' src={logoCod} alt="Logo" />
       <h1>Codificación de Dispositivos</h1>
     </div>
     <div className='container-body'>
